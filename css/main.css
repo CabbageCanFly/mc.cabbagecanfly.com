@@ -1,0 +1,195 @@
+@font-face {
+    font-family: 'Roboto Condensed';
+    src: url('/resources/fonts/RobotoCondensed-Regular.ttf');
+}
+@font-face {
+    font-family: 'Roboto Condensed Light';
+    src: url('/resources/fonts/RobotoCondensed-Light.ttf');
+}
+
+html {
+    background: #181A1B;
+    color: white;
+    font-family: 'Roboto Condensed';
+}
+body {
+    margin: 0;
+}
+
+.title {
+    margin: 12px 0;
+    text-align: center;
+}
+.subtitle {
+    font-size: 1.17em;
+    font-weight: normal;
+    margin: 0 0 12px 0;
+    opacity: 0.5;
+    text-align: center;
+}
+
+.title-wrapper {
+    box-sizing: border-box;
+    padding: 1.3rem;
+    width: 100%;
+}
+
+.v-h-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.title-date {
+    margin-top: 4px;
+    opacity: 0.25;
+}
+
+.link--plain,
+.link--plain:hover {
+    color: white;
+}
+
+.logo {
+    position: absolute;
+    display: block;
+    bottom: 0;
+    padding: 1.3rem;
+    opacity: 0.25;
+}
+.logo:hover {
+    opacity: 0.7;
+}
+
+.cabbage {
+    position: relative;
+    width: 27px;
+}
+.cabbage svg {
+    fill: #A6E22E;
+}
+
+table.mc-status-table {
+    width: 100%;
+    max-width: 450px;
+    border-spacing: 0px;
+}
+.mc-status-table tbody tr {
+    height: 74px;
+}
+.mc-status-table th {
+    text-align: left;
+    font-weight: normal;
+}
+.mc-status-table td {
+    border: 1px solid #999;
+    border-right-width: 0px;
+}
+.mc-status-table th,
+.mc-status-table td {
+    padding: 6px;
+    border-bottom-width: 0px;
+    vertical-align: middle;
+}
+.mc-status-table .address {
+    position: relative;
+    font-size: 18px;
+}
+.mc-status-table .motd {
+    color: gray;
+    font-size: 14px;
+}
+.mc-status-table .server-icon {
+    position: relative;
+    width: 24px;
+    padding-right: 2px;
+}
+.mc-status-table .server-icon img {
+    display: block;
+    height: 60px;
+    box-sizing: border-box;
+    padding: 4px;
+    /*width: 64px;*/
+    /*height: 24px;*/
+}
+.mc-status-table .server-description {
+    border-left-width: 0px;
+    padding-left: 2px;
+}
+.mc-status-table .center {
+    text-align: center;
+}
+.mc-status-table tr:last-child td {
+    border-bottom-width: 1px;
+}
+.mc-status-table tr td:last-child {
+    border-right-width: 1px;
+}
+
+.loading {
+    display: inline-block;
+    position: absolute;
+    right: -20px;
+    top: 3px;
+    width: 15px;
+    height: 15px;
+}
+.loading div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border: 3px solid #FD971F;
+    border-radius: 50%;
+    animation: spin-load 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: #FD971F transparent transparent transparent;
+}
+.loading div:nth-child(1) {
+    animation-delay: -0.45s;
+}
+.loading div:nth-child(2) {
+    animation-delay: -0.3s;
+}
+.loading div:nth-child(3) {
+    animation-delay: -0.15s;
+}
+.loading.complete div {
+    border-color: #A6E22E;
+}
+.loading.fail div {
+    border-color: #F92672;
+}
+.loading.complete div,
+.loading.fail div {
+    animation-iteration-count: 1;
+    animation: spin-end 0.75s forwards;
+}
+@keyframes spin-load {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+@keyframes spin-end {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+
+@media only screen and (max-width: 400px) {
+    .subtitle {
+        font-size: 1.05em;
+    }
+}
