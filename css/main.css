@@ -97,6 +97,7 @@ table.mc-status-table {
     vertical-align: middle;
 }
 .mc-status-table .address {
+    white-space: nowrap;
     position: relative;
     font-size: 18px;
 }
@@ -110,12 +111,15 @@ table.mc-status-table {
     padding-right: 2px;
 }
 .mc-status-table .server-icon img {
+    box-sizing: border-box;
     display: block;
     height: 60px;
-    box-sizing: border-box;
+    opacity: 0.4;
     padding: 4px;
-    /*width: 64px;*/
-    /*height: 24px;*/
+    transition: opacity 0.5s;
+}
+.mc-status-table tr.online .server-icon img {
+    opacity: 1;
 }
 .mc-status-table .server-description {
     border-left-width: 0px;
@@ -133,11 +137,9 @@ table.mc-status-table {
 
 .loading {
     display: inline-block;
-    position: absolute;
-    right: -20px;
-    top: 3px;
     width: 15px;
     height: 15px;
+    opacity: 0.45;
 }
 .loading div {
     box-sizing: border-box;
@@ -159,16 +161,18 @@ table.mc-status-table {
 .loading div:nth-child(3) {
     animation-delay: -0.15s;
 }
-.loading.complete div {
+.mc-status-table tr.online .loading div {
     border-color: #A6E22E;
 }
-.loading.fail div {
+.mc-status-table tr.offline .loading div {
     border-color: #F92672;
 }
-.loading.complete div,
-.loading.fail div {
+.mc-status-table tr.online .loading div,
+.mc-status-table tr.offline .loading div {
     animation-iteration-count: 1;
-    animation: spin-end 0.75s forwards;
+}
+.mc-status-table tr.online .loading {
+    animation: spin-done 0.75s forwards;
 }
 @keyframes spin-load {
     0% {
@@ -178,18 +182,21 @@ table.mc-status-table {
         transform: rotate(360deg);
     }
 }
-@keyframes spin-end {
+@keyframes spin-done {
     0% {
-        opacity: 1;
+        opacity: 0.45;
     }
     100% {
-        opacity: 0;
+        opacity: 0.8;
     }
 }
 
-
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 500px) {
     .subtitle {
         font-size: 1.05em;
+    }
+    .mc-status-table th,
+    .mc-status-table td {
+        padding: 3px;
     }
 }
