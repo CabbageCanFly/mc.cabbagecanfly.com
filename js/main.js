@@ -40,12 +40,9 @@ function getStatus(tableRow) {
 }
 
 function getStatuses() {
-    // var addresses = document.querySelector(".mc-status-table").querySelectorAll(".address");
     var tableRows = document.querySelector(".mc-status-table").querySelector("tbody").querySelectorAll("tr");
     tableRows.forEach(function(e) {
-        // getStatus(e.textContent.trim());
         getStatus(e);
-        console.log();
     });
 }
 
