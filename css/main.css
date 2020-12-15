@@ -86,6 +86,11 @@ table.mc-status-table {
     text-align: left;
     font-weight: normal;
 }
+.mc-status-table th.version,
+.mc-status-table th.players {
+    box-sizing: border-box;
+    width: 58px;
+}
 .mc-status-table td {
     border: 1px solid #999;
     border-right-width: 0px;
