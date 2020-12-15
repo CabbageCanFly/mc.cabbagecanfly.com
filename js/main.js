@@ -11,7 +11,7 @@ function updateTableRow(tableRow, content) {
     if (content.online) {
         tableRow.className += " online";
         tableRow.querySelector(".server-icon img").src = content.icon;
-        tableRow.querySelector(".motd").textContent = content.motd.replace("\n", "<br>");
+        tableRow.querySelector(".motd").innerHTML = content.motd.replace("\n", "<br>");
         tableRow.querySelector(".version").textContent = content.version;
         tableRow.querySelector(".players").textContent =
             content.players.online + "/" + content.players.max;
