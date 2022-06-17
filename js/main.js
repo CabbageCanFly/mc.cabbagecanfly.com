@@ -4,6 +4,7 @@ var statusEndpoint = "https://status.cabbagecanfly.com/api/v1/"
 var serverMap = {
     "mc.cabbagecanfly.com": "mc/vanilla-bravo",
     "mc2.cabbagecanfly.com": "mc/vanilla-alfa",
+    "mc3.cabbagecanfly.com": "mc/vanilla-charlie",
     "ftb.cabbagecanfly.com": "mc/ftb",
     "dummy.cabbagecanfly.com": "mc/dummy"
 }
